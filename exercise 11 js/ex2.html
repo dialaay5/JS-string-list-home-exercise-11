@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>targil 2</title>
+</head>
+<body>
+    
+    <form>
+    <p>number: <input type="number" id="number_id" />
+       number1: <input type="number" id="number1_id" />
+    <button type="button" onclick="ButtonClick()">Print</button>
+    <button type="button" onclick="ReturnValue()">Return-value</button>
+    <button type="button" onclick="SortButton()">Sort-Button</button></p>
+    <p id="result1"></p>
+    <p id="result2"></p>
+    <p id="sort_method"></p>
+    </form>
+
+    <script>
+        let list1 =[]
+        function ButtonClick(){
+        let number = parseInt(document.getElementById('number_id').value)
+        let x = list1.length
+        if (number > 0){
+            list1.push(number)
+        }
+
+        else if (number < 0){
+            list1.unshift(number)
+        }
+
+        else if (number == 0){
+           while (x >= 0){
+                list1.pop()
+                x-- 
+           }          
+        }  
+
+        document.getElementById('result1').innerHTML = `${list1}`
+        }
+
+
+        function ReturnValue(){
+            let number1 = parseInt(document.getElementById('number1_id').value)
+            let number_times_value_appears = 0
+            for(let i = 0; i < list1.length; i++){
+                 if(list1[i] == number1){
+                    number_times_value_appears++;
+            }
+        }
+            document.getElementById('result2').innerHTML = `${number_times_value_appears}`
+
+        }
+
+        
+        //bonus
+        function SortButton(){
+            document.getElementById('sort_method').innerHTML = list1.sort() 
+        }
+    </script> 
+</body>
+</html>

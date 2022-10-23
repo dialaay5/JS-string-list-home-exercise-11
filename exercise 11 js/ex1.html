@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>targil 1</title>
+</head>
+<body>
+
+    <form>
+        <p>first_textbox: <input type="text" id="text1_id" /></p>
+        <p>second_textbox: <input type="text" id="text2_id" /></p>
+        <p><button type="button" onclick="PrintButton()">Print</button></p>
+        <p id="first_text"></p>
+        <p id="second_text"></p>
+        <p id="first.length_text"></p>
+        <p id="second.length_text"></p>
+        <p id="combination"></p>
+        <p id="merge"></p>       
+        <p id="first_text_revers"></p>
+        <p id="second_letter1"></p>
+        <p id="second_letter2"></p>
+    </form>
+
+    <script>
+        function PrintButton(){
+            let first_textbox = document.getElementById('text1_id').value
+            let second_textbox = document.getElementById('text2_id').value
+            let result = first_textbox.concat(second_textbox).concat(first_textbox)
+            let merge_string = ""
+            let revers = ""
+
+            document.getElementById('first_text').innerHTML = `${first_textbox}`
+            document.getElementById('second_text').innerHTML = `${second_textbox}`
+            document.getElementById('first.length_text').innerHTML = `${first_textbox.length}`
+            document.getElementById('second.length_text').innerHTML = `${second_textbox.length}`
+            document.getElementById('combination').innerHTML = `${result}`
+            for(let x = 0; first_textbox.length > x && second_textbox.length > x; x++){
+                merge_string += first_textbox[x] + second_textbox[x]
+            }
+            document.getElementById('merge').innerHTML = `${merge_string}`
+            for (let x = first_textbox.length -1; x >=0; x--){
+                revers += first_textbox[x]
+            }
+            document.getElementById('first_text_revers').innerHTML = `${revers}`
+            document.getElementById('second_letter1').innerHTML = `${first_textbox[1]}`
+            document.getElementById('second_letter2').innerHTML = `${second_textbox[1]}`
+
+        }
+    </script>  
+</body>
+</html>

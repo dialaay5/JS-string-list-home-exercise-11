@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>targil 3</title>
+</head>
+<body>
+
+    <form>
+        <select name="options" id="options">
+        <option value="red">red</option>
+        <option value="blue">blue</option>
+        <option value="green">green</option>
+        </select>
+        <button type="button" onclick="ButtonClick()">print</button>
+        <span id="redcolor" style="color: red ;"></span>
+        <span id="bluecolor" style="color: blue ;"></span>
+        <span id="greencolor" style="color: green ;"></span>
+
+
+    </form>
+
+    <script>
+        function ButtonClick(){
+            let print = (document.getElementById('options').value)
+            if (print == "red"){
+                document.getElementById('redcolor').innerHTML = 'HELLO JAVA SCRIPT'
+                document.getElementById('bluecolor').innerHTML = ''
+                document.getElementById('greencolor').innerHTML = ''
+
+
+            }
+
+            else if (print == "blue"){
+                document.getElementById('bluecolor').innerHTML = 'HELLO JAVA SCRIPT'
+                document.getElementById('redcolor').innerHTML = ''
+                document.getElementById('greencolor').innerHTML = ''
+
+            }
+
+            else if (print == "green"){
+                document.getElementById('greencolor').innerHTML = 'HELLO JAVA SCRIPT' 
+                document.getElementById('redcolor').innerHTML = ''
+                document.getElementById('bluecolor').innerHTML = ''
+            }
+        }
+    </script>
+
+
+
+
+    
+</body>
+</html>
